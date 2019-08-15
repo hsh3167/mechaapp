@@ -46,21 +46,47 @@
                     </v-col>
                   </v-row>
                 </v-app>
+
+                <template>
+                        <v-bottom-navigation
+                          v-model="bottomNav"
+                        >
+                          <v-btn value="recent">
+                            <span>Recent</span>
+                            <v-icon>history</v-icon>
+                          </v-btn>
+                      
+                          <v-btn value="favorites">
+                            <span>Favorites</span>
+                            <v-icon>favorite</v-icon>
+                          </v-btn>
+                      
+                          <v-btn value="nearby">
+                            <span>Nearby</span>
+                            <v-icon>place</v-icon>
+                          </v-btn>
+                        </v-bottom-navigation>
+                      </template>
+                      
               </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
 new Vue({
   el: '#app',
   vuetify: new Vuetify(),
-  data: () => ({
+  data() {
+      return{
     items: [
       { title: 'Click Me' },
       { title: 'Click Me' },
       { title: 'Click Me' },
       { title: 'Click Me 2' },
     ],
-  }),
+    bottomNav: 'recent',
+      }
+  },
 })
   </script>
 </body>
